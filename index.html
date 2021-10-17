@@ -55,13 +55,13 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link gtm-track" href="">體質養生</a>
+              <a class="nav-link smooth-scroll" href="#s1">體質養生</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link gtm-track" href="">四季節氣養生</a>
+              <a class="nav-link smooth-scroll" href="#s-spring">四季節氣養生</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link gtm-track" href="#depression">名人養生</a>
+              <a class="nav-link smooth-scroll" href="#s2">名人養生</a>
             </li>
             <div class="social-box">
               <a data-category="web_web" data-action="2021mental-health" data-label="click-header-fbshare" href="https://www.facebook.com/commonhealth"
@@ -181,10 +181,79 @@
     </div>
   </section>
 
-
-
   <!-- 春 -->
   <section id="s-spring">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 offset-lg-1 col-12">
+          <div class="solar-op"></div>
+          <div class="solar-title">
+            <h1>陽氣萌發萬物生長<br/>
+              甘味食物有助脾胃</h1>
+            <p>春季是寒氣漸消、萬物開始生長、陽氣萌發的季節，人體機能也活躍了起來，<br/>在春天就要開始培養陽氣，增強抵抗力。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+          <div class="col-lg-4">
+            <div class="card-adjust">
+              <div class="adjust-img"><img src="./images/icon_bowl.png" alt=""></div>
+              <div class="adjust-title">飲食調養</div>
+              <div class="adjust-txt">
+                <p>適量攝取溫補陽氣的食物，而酸味食物會收斂肝氣、不利養肝，應少吃</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card-adjust">
+              <div class="adjust-img"><img src="./images/icon_cloudy.png" alt=""></div>
+              <div class="adjust-title">飲食調養</div>
+              <div class="adjust-txt">
+                <p>適量攝取溫補陽氣的食物，而酸味食物會收斂肝氣、不利養肝，應少吃</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card-adjust">
+              <div class="adjust-img"><img src="./images/icon_happy.png" alt=""></div>
+              <div class="adjust-title">飲食調養</div>
+              <div class="adjust-txt">
+                <p>適量攝取溫補陽氣的食物，而酸味食物會收斂肝氣、不利養肝，應少吃</p>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <div class="solar-wrap">  
+      <h4>春天節氣</h4>
+      <div class="container">
+        <div class="row">
+
+          <div class="card" href="#!">
+            <div class="front" style="background-image: url(../images/solar-card/spring-1.png)">
+              <p>陽氣初生，宜溫辛食物提升免疫力</p>
+            </div>
+            <div class="back" style="background-image: url(../images/solar-card/spring-1-back.jpg)">
+              <div>
+                <p>Consectetur adipisicing elit. Possimus, praesentium?</p>
+                <p>Provident consectetur natus voluptatem quis tenetur sed beatae eius sint.</p>
+                <a href=""><button class="button">Click Here</button></a>
+              </div>
+            </div>
+          </div>
+
+
+          
+
+
+        </div>
+      </div>
+    </div>
     
   </section>
 
@@ -225,9 +294,26 @@
     </ul>
   </footer>
 
+
     <!-- js -->
     <script type="text/javascript" src="./js/jquery.min.js"></script>
     <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+
+    <script>
+    // Smooth scrolling using jQuery easing
+    $('a.smooth-scroll[href*="#"]:not([href="#"])').click(function () {
+      if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+        if (target.length) {
+          $('html, body').animate({
+            scrollTop: (target.offset().top)
+          }, 1000);
+          // return false;
+        }
+      }
+    });
+    </script>
 
 </body>
 
