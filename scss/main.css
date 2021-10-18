@@ -48,23 +48,24 @@ p + p {
   margin-top: 30px;
 }
 
-.ad-block {
+.bn-block {
   text-align: center;
   margin: 80px auto 0;
 }
 
-.ad-block a {
+.bn-block a {
   color: #000;
+  display: block;
 }
 
-.ad-block p {
+.bn-block p {
   margin-bottom: 30px;
   font-weight: 500;
 }
 
-.ad-block .ad-img {
+.bn-block .bn-img {
   width: 100%;
-  height: 160px;
+  height: 140px;
   border: 1px solid #999;
 }
 
@@ -137,11 +138,18 @@ p + p {
 .card-physique .physique-more a {
   color: #000;
   font-weight: 500;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.card-physique .physique-more a:hover {
+  color: #F75C2F;
 }
 
 .card-physique .physique-more img {
   height: 18px;
   margin-left: 10px;
+  margin-bottom: 5px;
 }
 
 .card-physique-2 {
@@ -161,11 +169,11 @@ p + p {
   margin: 60px auto 50px;
 }
 
-#s-spring {
+#spring {
   background-color: #F1F2E1;
 }
 
-#s-spring .solar-op {
+#spring .solar-op {
   background-image: url(../images/spring-op.jpg);
   background-size: cover;
   width: 100%;
@@ -241,9 +249,6 @@ p + p {
 
 .front,
 .back {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   border-radius: 15px;
   background-position: center;
   background-size: cover;
@@ -262,6 +267,9 @@ p + p {
 }
 
 .front {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   background-size: cover;
   padding: 20px 26px;
   font-size: 18px;
@@ -288,12 +296,10 @@ p + p {
   background: #fff;
   -webkit-transform: rotateY(-180deg);
           transform: rotateY(-180deg);
-  padding: 0 2em;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  padding: 1.6em 1.6em;
   font-size: 17px;
   line-height: 1.5;
+  background-size: cover;
 }
 
 .back .button {
@@ -316,19 +322,67 @@ p + p {
           transform: rotateY(180deg);
 }
 
-.card:nth-child(even) .back .button {
-  background: linear-gradient(135deg, #cccccc, #ccc);
-}
-
-.card:nth-child(even) .back .button:before {
-  -webkit-box-shadow: 0 0 10px 10px rgba(204, 204, 204, 0.25);
-          box-shadow: 0 0 10px 10px rgba(204, 204, 204, 0.25);
-  background-color: rgba(204, 204, 204, 0.25);
-}
-
 .card:nth-child(even):hover .back {
   -webkit-transform: rotateY(0deg);
           transform: rotateY(0deg);
+}
+
+.back .txt-wrap:nth-child(2) {
+  margin-top: 10px;
+}
+
+.back .txt-wrap .txt-img {
+  width: 34px;
+  display: inline-block;
+  margin-right: 10px;
+  vertical-align: top;
+}
+
+.back .txt-wrap .txt {
+  width: calc(100% - 52px);
+  display: inline-block;
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.back .read-more {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.back h4 {
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 1.5;
+  color: #F75C2F;
+  margin: 12px auto;
+}
+
+.back .book-link {
+  max-height: 120px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.back .book-link a {
+  color: #000;
+}
+
+.back .book-link p {
+  font-weight: 300;
+  line-height: 1.55;
+  font-size: 17px;
+  color: #555;
+  width: 63%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.back .book-link img {
+  width: 35%;
+  display: inline-block;
 }
 
 .button {
@@ -337,54 +391,34 @@ p + p {
   cursor: pointer;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  font-weight: bold;
+  font-weight: 400;
+  font-size: 18px;
   color: #fff;
   padding: .5em 1em;
   border-radius: 100px;
-  font: inherit;
   border: none;
   position: relative;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
   -webkit-transition: 300ms ease;
   transition: 300ms ease;
+  margin: auto;
+  letter-spacing: 2px;
 }
 
-.button:before {
-  -webkit-transition: 300ms ease;
-  transition: 300ms ease;
-  position: absolute;
-  display: block;
-  content: '';
-  -webkit-transform: translateZ(-40px);
-          transform: translateZ(-40px);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  height: calc(100% - 20px);
-  width: calc(100% - 20px);
-  border-radius: 100px;
-  left: 10px;
-  top: 16px;
+.mobile-show-btn {
+  display: none;
 }
 
-.button:hover {
-  -webkit-transform: translateZ(55px);
-          transform: translateZ(55px);
+@media screen and (max-width: 768px) {
+  .mobile-show-btn {
+    display: block;
+  }
 }
 
-.button:hover:before {
-  -webkit-transform: translateZ(-55px);
-          transform: translateZ(-55px);
-}
-
-.button:active {
-  -webkit-transform: translateZ(20px);
-          transform: translateZ(20px);
-}
-
-.button:active:before {
-  -webkit-transform: translateZ(-20px);
-          transform: translateZ(-20px);
-  top: 12px;
+@media screen and (max-width: 768px) {
+  #others-spring {
+    display: none;
+  }
 }
 /*# sourceMappingURL=main.css.map */
