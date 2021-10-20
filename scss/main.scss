@@ -39,6 +39,9 @@ h1 {
     font-weight: 200;
     line-height: 1.5;
     margin-bottom: 30px;
+    @include mobile {
+      font-size: 28px;
+    }
 }
 
 p {
@@ -47,15 +50,23 @@ p {
 	line-height: 1.78;
 	margin-top: 0px;
 	margin-bottom: 0px;
+  @include mobile {
+    font-size: 17px;
+    line-height: 1.7;
+  }
 }
 p+p {
 	margin-top: 30px;
 }
 
 //共用樣式 end =================================
+
 .bn-block {
     text-align: center;
     margin: 80px auto 0;
+    @include mobile {
+      margin-top: 60px;
+    }
     a {
         color: #000;
         display: block;
@@ -66,7 +77,7 @@ p+p {
     }
     .bn-img {
         width: 100%;
-        height: 140px;
+        height: auto;
         border: 1px solid #999;
     }
     //img size:525x160
@@ -79,6 +90,9 @@ p+p {
 .title {
     text-align: center;
     margin-bottom: 50px;
+    @include mobile {
+      margin-bottom: 30px;
+    }
     h1 {
         font-weight: 500;
     }
@@ -88,6 +102,11 @@ p+p {
     padding: 20px;
     background-color: #F4EDE1;
     box-shadow: 3px 3px 6px $shadow;
+    @include mobile {
+      margin-left: 15px;
+      margin-right: 15px;
+      margin-bottom: 25px;
+    }
     .physique-title {
         writing-mode: vertical-lr;
         display: inline-block;
@@ -103,7 +122,13 @@ p+p {
         width: 172px;
         height: 220px;
         margin-left: 10px;
-        background: #fff;
+        @include mobile {
+          height: 200px;
+          margin-left: 40px;
+          img {
+            height: 100%;
+          }
+        }
     }
     .physique-txt {
         margin-top: 26px;
@@ -155,27 +180,178 @@ p+p {
 //體質卡 end
 
 //節氣 start
-.solar-title {
-    text-align: center;
-    margin: 60px auto 50px;
+
+//左 side nav ＆season background color ------------------------
+.seasons {
+	-moz-transition: background-color .3s ease-in;
+    -o-transition: background-color .3s ease-in;
+    -webkit-transition: background-color .3s ease-in;
+    transition: background-color .3s ease-in;
+}
+.seasonsItem {
+	text-align: center;
+	// padding: 100px 0;
+}
+.sideNav {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	position: fixed;
+	top: 50%;
+	left: -100%;
+  z-index: 10;
+	-webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+	-moz-transition: left 1.2s ease-in;
+    -o-transition: left 1.2s ease-in;
+    -webkit-transition: left 1.2s ease-in;
+    transition: left 1.2s ease-in;	
+
+    @include mobile {
+      width: 100%;
+      top: auto;
+      bottom: 0;
+      background-color: #fff;
+      box-shadow: 0 -4px 5px 0 rgba(140,140,140,0.2);
+    }
+
+	&.active {
+		left: 30px;
+    @include mobile {
+      left: 0;
+    }
+	}	
+	& > li {
+		margin-bottom: 10px;
+		border-width: 1px;
+		border-style: solid;
+		border-radius: 50%;
+		border-color: transparent;
+		&.active {
+			border-color: #000;
+		}
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+    @include mobile {
+      display: inline-block;
+      margin-bottom: 0;
+      width: 24%;
+    }
+
+	}
+	
+	&__item {
+		display: block;
+		width: 30px;
+		color: #9198a0;
+		text-decoration: none;
+		height: 30px;
+		line-height: 30px;
+		text-align: center;
+    @include mobile {
+      width: auto;
+      margin: 10px;
+    }
+	}
 }
 
-//s2 spring  -------------------------------
+.color {
+	&-spring {
+		background-color: #F1F3D2;
+	}
+	&-summer {
+		background-color: #FFF3E5;
+	}
+	&-fall {
+		background-color: #EDEBFF;
+	}
+	&-winter {
+		background-color: #F2F2F2;
+	}
+}
+
+// seasons -------------------------------
 #spring {
-    background-color:#F1F2E1 ;
     .solar-op {
         background-image: url(../images/spring-op.jpg);
         background-size: cover;
         width: 100%;
         height: 300px;
+        @include mobile {
+          background-image: url(../images/spring-op-mb.jpg);
+          height: 330px;
+        }
     }
+}
+#summer {
+  .solar-op {
+      background-image: url(../images/summer-op.jpg);
+      background-size: cover;
+      width: 100%;
+      height: 300px;
+      @include mobile {
+        background-image: url(../images/summer-op-mb.jpg);
+        height: 330px;
+      }
+  }
+}
+#fall {
+  .solar-op {
+      background-image: url(../images/fall-op.jpg);
+      background-size: cover;
+      width: 100%;
+      height: 300px;
+      @include mobile {
+        background-image: url(../images/fall-op-mb.jpg);
+        height: 330px;
+      }
+  }
+}
+#winter {
+  .solar-op {
+      background-image: url(../images/winter-op.jpg);
+      background-size: cover;
+      width: 100%;
+      height: 300px;
+      @include mobile {
+        background-image: url(../images/winter-op-mb.jpg);
+        height: 330px;
+      }
+  }
+}
 
+.solar-title {
+  text-align: center;
+  margin: 60px auto 50px;
+  span {
+    display: block;
+  }
+  @include mobile {
+    margin-top: 50px;
+    margin-bottom: 40px;
+    p {
+      text-align: left;
+    }
+    span {
+      display: inline;
+    }
+  }
 }
 //調養卡
 .card-adjust {
     background-color: #fff;
     padding: 25px;
     box-shadow: 3px 3px 6px $shadow;
+    text-align: left;
+    @include mobile {
+      margin-left: 15px;
+      margin-right: 15px;
+      margin-bottom: 25px;
+      padding: 18px 20px;
+    }
     .adjust-img {
         display: inline-block;
         img {
@@ -191,21 +367,22 @@ p+p {
         margin-left: 10px;
     }
     .adjust-txt {
-        margin-top: 20px;
+        margin-top: 12px;
     }
 }
 
 //節氣卡
 .solar-wrap {
     margin-top: 80px;
+    @include mobile {
+      margin-top: 40px;
+    }
     h4 {
         text-align: center;
         font-size: 26px;
         font-weight: 500;
     }
 }
-//code pen start
-
 *, *:before, *:after {
   box-sizing: border-box;
 }
@@ -215,61 +392,6 @@ p+p {
     @content;
   }
 }
-
-// html {
-//   font-size: 18px;
-//   line-height: 1.5;
-//   font-weight: 300;
-//   color: #333;
-//   font-family: "Nunito Sans", sans-serif;
-// }
-
-// body {
-//   margin: 0;
-//   padding: 0;
-//   height: 100vh;
-//   background-attachment: fixed;
-// }
-
-// .content {
-//   display: flex;
-//   margin: 0 auto;
-//   justify-content: center;
-//   align-items: center;
-//   flex-wrap: wrap;
-//   max-width: 1000px;
-// }
-
-// .heading {
-//   width: 100%;
-//   margin-left: 1rem;
-//   font-weight: 900;
-//   font-size: 1.618rem;
-//   text-transform: uppercase;
-//   letter-spacing: .1ch;
-//   line-height: 1;
-//   padding-bottom: .5em;
-//   margin-bottom: 1rem;
-//   position: relative;
-  
-//   &:after {
-//     display: block;
-//     content: '';
-//     position: absolute;
-//     width: 60px;
-//     height: 4px;
-//     background: linear-gradient(135deg, adjust-hue($card-primary, -20deg), $card-primary);
-//     bottom: 0;
-//   }
-// }
-
-// .description {
-//   width: 100%;
-//   margin-top: 0;
-//   margin-left: 1rem;
-//   margin-bottom: 3rem;
-// }
-
 .card {
   color: inherit;
   cursor: pointer;
@@ -294,8 +416,6 @@ p+p {
   background-position: center;
   background-size: cover;
   text-align: left;
-//   justify-content: center;
-  
   position: absolute;
   height: 100%;
   width: 100%;
@@ -318,19 +438,6 @@ p+p {
   overflow: hidden;
   align-items: end;
   z-index: 1;
-
-//   &:before {
-//     position: absolute;
-//     display: block;
-//     content: '';
-//     top: 0;
-//     left: 0;
-//     right: 0;
-//     bottom: 0;
-//     background: linear-gradient(135deg, adjust-hue($card-primary, -20deg), $card-primary);
-//     opacity: .25;
-//     z-index: -1;
-//   }
   .card:hover & {
     transform: rotateY(180deg);
   }
@@ -342,11 +449,12 @@ p+p {
 .back {
   background: #fff;
   transform: rotateY(-180deg);
-  padding: 1.6em 1.6em;
+  padding: 1.6em 1.6em 1em;
   // align-items: center;
   font-size: 17px;
   line-height: 1.5;
   background-size: cover;
+  display: table;
   
   .button {
     background: linear-gradient(135deg, adjust-hue($card-primary, -20deg), $card-primary);
@@ -372,7 +480,11 @@ p+p {
   .card:nth-child(even):hover & {
     transform: rotateY(0deg);
   }
-  
+
+  .back-wrap{
+      vertical-align: middle;
+      display: table-cell;
+  }
   .txt-wrap {
     &:nth-child(2) {
       margin-top: 10px;
@@ -404,14 +516,14 @@ p+p {
   .book-link {
     max-height: 120px;
     overflow: hidden;
-    margin-top: 8px;
+    margin-top: 14px;
     a {
       color: #000;
     }
     p {
       font-weight: 300;
-      line-height: 1.55;
-      font-size: 17px;
+      line-height: 1.5;
+      font-size: 16px;
       color: #555;
       width: 63%;
       display: inline-block;
@@ -441,45 +553,17 @@ p+p {
   transition: 300ms ease;
   margin: auto;
   letter-spacing: 2px;
-  &:before {
-    // transition: 300ms ease;
-    // position: absolute;
-    // display: block;
-    // content: '';
-    // transform: translateZ(-$height);
-    // -webkit-backface-visibility: hidden;
-    // backface-visibility: hidden;
-    // height: calc(100% - 20px);
-    // width: calc(100% - 20px);
-    // border-radius: 100px;
-    // left: 10px;
-    // top: 16px;
-  }
-  
-  // &:hover {
-  //   transform: translateZ($height + 15px);
-    
-  //   &:before {
-  //     transform: translateZ(-($height + 15px));
-  //   }
-  // }
-  
-  // &:active {
-  //   transform: translateZ($height/2);
-    
-  //   &:before {
-  //     transform: translateZ(-($height/2));
-  //       top: 12px;
-  //   }
-  // }
 }
-//code pen end
-
+//節氣卡 end
 
 .mobile-show-btn {
   display: none;
   @include mobile {
 		display: block;
+    letter-spacing: 2px;
+    border-bottom: 1px solid #333;
+    display: inline-block;
+    margin-top: 10px;
 	}
 }
 #others-spring {
@@ -487,5 +571,102 @@ p+p {
     display: none;
   }
 }
+#others-summer {
+  @include mobile {
+    display: none;
+  }
+}
+#others-fall{
+  @include mobile {
+    display: none;
+  }
+}
+#others-winter {
+  @include mobile {
+    display: none;
+  }
+}
 
+// cerebrity -------------------------------
+.story-block {
+  position: relative;
+  width: 33.333%;
+  display: inline-block;
+  @include mobile {
+    width: 100%;
+    padding: 10px 15px;
+  }
+  &:hover {
+    .story-txt {
+      opacity: 1;
+      transition: .3s;
+    }
+  }
+  a {
+    display: block;
+  }
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+.story-txt {
+  position: absolute;
+  bottom: 30px;
+  z-index: 1;
+  color: #fff;
+  opacity: .85;
+  text-align: center;
+  width: 100%;
+  transition: .3s;
+  @include mobile {
+    opacity: 1;
+    width: calc(100% - 30px);
+  }
+  h3 {
+    font-family: source-han-serif-tc, serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.5;
+    margin-top: 6px;
+    @include mobile {
+      font-size: 20px;
+    }
+  }
+}
+
+
+// sponsor -------------------------------
+.sp{
+  .sp-logo {
+    width: 120px;
+    height: auto;
+    // min-height: 50px;
+    margin: 18px 30px;
+    @include mobile {
+      width: 100px;
+      margin: 12px 20px;
+    }
+  }
+}
+
+
+// facebook -------------------------------
+// .container {
+//   max-width: 1280px;
+// }
+.w-full {
+  width: 100%;
+}
+.max-w-800px {
+  max-width: 800px;
+}
+.m-auto {
+  margin: auto;
+}
+
+/* 必加 >> 跨瀏覽器強制寬度100% */
+.fb_iframe_widget_fluid_desktop iframe {
+  width: 100% !important;
+}
 

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   background-color: #FCFCFC;
   font-family: 'roboto', 'Noto Sans TC', sans-serif;
@@ -36,12 +37,25 @@ h1 {
   margin-bottom: 30px;
 }
 
+@media only screen and (max-width: 768px) {
+  h1 {
+    font-size: 28px;
+  }
+}
+
 p {
   font-size: 18px;
   font-weight: 300;
   line-height: 1.78;
   margin-top: 0px;
   margin-bottom: 0px;
+}
+
+@media only screen and (max-width: 768px) {
+  p {
+    font-size: 17px;
+    line-height: 1.7;
+  }
 }
 
 p + p {
@@ -51,6 +65,12 @@ p + p {
 .bn-block {
   text-align: center;
   margin: 80px auto 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .bn-block {
+    margin-top: 60px;
+  }
 }
 
 .bn-block a {
@@ -65,13 +85,19 @@ p + p {
 
 .bn-block .bn-img {
   width: 100%;
-  height: 140px;
+  height: auto;
   border: 1px solid #999;
 }
 
 .title {
   text-align: center;
   margin-bottom: 50px;
+}
+
+@media only screen and (max-width: 768px) {
+  .title {
+    margin-bottom: 30px;
+  }
 }
 
 .title h1 {
@@ -83,6 +109,14 @@ p + p {
   background-color: #F4EDE1;
   -webkit-box-shadow: 3px 3px 6px #ccc;
           box-shadow: 3px 3px 6px #ccc;
+}
+
+@media only screen and (max-width: 768px) {
+  .card-physique {
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 25px;
+  }
 }
 
 .card-physique .physique-title {
@@ -103,7 +137,16 @@ p + p {
   width: 172px;
   height: 220px;
   margin-left: 10px;
-  background: #fff;
+}
+
+@media only screen and (max-width: 768px) {
+  .card-physique .physique-img {
+    height: 200px;
+    margin-left: 40px;
+  }
+  .card-physique .physique-img img {
+    height: 100%;
+  }
 }
 
 .card-physique .physique-txt {
@@ -164,13 +207,105 @@ p + p {
   background-color: #EEF1FA;
 }
 
-.solar-title {
-  text-align: center;
-  margin: 60px auto 50px;
+.seasons {
+  -webkit-transition: background-color 1s ease-in;
+  transition: background-color 1s ease-in;
 }
 
-#spring {
-  background-color: #F1F2E1;
+.seasonsItem {
+  text-align: center;
+}
+
+.sideNav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  top: 50%;
+  left: -100%;
+  z-index: 10;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-transition: left 1.2s ease-in;
+  transition: left 1.2s ease-in;
+}
+
+@media only screen and (max-width: 768px) {
+  .sideNav {
+    width: 100%;
+    top: auto;
+    bottom: 0;
+    background-color: #fff;
+    -webkit-box-shadow: 0 -4px 5px 0 rgba(140, 140, 140, 0.2);
+            box-shadow: 0 -4px 5px 0 rgba(140, 140, 140, 0.2);
+  }
+}
+
+.sideNav.active {
+  left: 30px;
+}
+
+@media only screen and (max-width: 768px) {
+  .sideNav.active {
+    left: 0;
+  }
+}
+
+.sideNav > li {
+  margin-bottom: 10px;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 50%;
+  border-color: transparent;
+}
+
+.sideNav > li.active {
+  border-color: #000;
+}
+
+.sideNav > li:last-of-type {
+  margin-bottom: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .sideNav > li {
+    display: inline-block;
+    margin-bottom: 0;
+    width: 24%;
+  }
+}
+
+.sideNav__item {
+  display: block;
+  width: 30px;
+  color: #9198a0;
+  text-decoration: none;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .sideNav__item {
+    width: auto;
+    margin: 10px;
+  }
+}
+
+.color-spring {
+  background-color: #F1F3D2;
+}
+
+.color-summer {
+  background-color: #FFF3E5;
+}
+
+.color-fall {
+  background-color: #EDEBFF;
+}
+
+.color-winter {
+  background-color: #F2F2F2;
 }
 
 #spring .solar-op {
@@ -180,11 +315,92 @@ p + p {
   height: 300px;
 }
 
+@media only screen and (max-width: 768px) {
+  #spring .solar-op {
+    background-image: url(../images/spring-op-mb.jpg);
+    height: 330px;
+  }
+}
+
+#summer .solar-op {
+  background-image: url(../images/summer-op.jpg);
+  background-size: cover;
+  width: 100%;
+  height: 300px;
+}
+
+@media only screen and (max-width: 768px) {
+  #summer .solar-op {
+    background-image: url(../images/summer-op-mb.jpg);
+    height: 330px;
+  }
+}
+
+#fall .solar-op {
+  background-image: url(../images/fall-op.jpg);
+  background-size: cover;
+  width: 100%;
+  height: 300px;
+}
+
+@media only screen and (max-width: 768px) {
+  #fall .solar-op {
+    background-image: url(../images/fall-op-mb.jpg);
+    height: 330px;
+  }
+}
+
+#winter .solar-op {
+  background-image: url(../images/winter-op.jpg);
+  background-size: cover;
+  width: 100%;
+  height: 300px;
+}
+
+@media only screen and (max-width: 768px) {
+  #winter .solar-op {
+    background-image: url(../images/winter-op-mb.jpg);
+    height: 330px;
+  }
+}
+
+.solar-title {
+  text-align: center;
+  margin: 60px auto 50px;
+}
+
+.solar-title span {
+  display: block;
+}
+
+@media only screen and (max-width: 768px) {
+  .solar-title {
+    margin-top: 50px;
+    margin-bottom: 40px;
+  }
+  .solar-title p {
+    text-align: left;
+  }
+  .solar-title span {
+    display: inline;
+  }
+}
+
 .card-adjust {
   background-color: #fff;
   padding: 25px;
   -webkit-box-shadow: 3px 3px 6px #ccc;
           box-shadow: 3px 3px 6px #ccc;
+  text-align: left;
+}
+
+@media only screen and (max-width: 768px) {
+  .card-adjust {
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 25px;
+    padding: 18px 20px;
+  }
 }
 
 .card-adjust .adjust-img {
@@ -205,11 +421,17 @@ p + p {
 }
 
 .card-adjust .adjust-txt {
-  margin-top: 20px;
+  margin-top: 12px;
 }
 
 .solar-wrap {
   margin-top: 80px;
+}
+
+@media only screen and (max-width: 768px) {
+  .solar-wrap {
+    margin-top: 40px;
+  }
 }
 
 .solar-wrap h4 {
@@ -296,10 +518,11 @@ p + p {
   background: #fff;
   -webkit-transform: rotateY(-180deg);
           transform: rotateY(-180deg);
-  padding: 1.6em 1.6em;
+  padding: 1.6em 1.6em 1em;
   font-size: 17px;
   line-height: 1.5;
   background-size: cover;
+  display: table;
 }
 
 .back .button {
@@ -325,6 +548,11 @@ p + p {
 .card:nth-child(even):hover .back {
   -webkit-transform: rotateY(0deg);
           transform: rotateY(0deg);
+}
+
+.back .back-wrap {
+  vertical-align: middle;
+  display: table-cell;
 }
 
 .back .txt-wrap:nth-child(2) {
@@ -363,7 +591,7 @@ p + p {
 .back .book-link {
   max-height: 120px;
   overflow: hidden;
-  margin-top: 8px;
+  margin-top: 14px;
 }
 
 .back .book-link a {
@@ -372,8 +600,8 @@ p + p {
 
 .back .book-link p {
   font-weight: 300;
-  line-height: 1.55;
-  font-size: 17px;
+  line-height: 1.5;
+  font-size: 16px;
   color: #555;
   width: 63%;
   display: inline-block;
@@ -413,6 +641,10 @@ p + p {
 @media screen and (max-width: 768px) {
   .mobile-show-btn {
     display: block;
+    letter-spacing: 2px;
+    border-bottom: 1px solid #333;
+    display: inline-block;
+    margin-top: 10px;
   }
 }
 
@@ -420,5 +652,114 @@ p + p {
   #others-spring {
     display: none;
   }
+}
+
+@media screen and (max-width: 768px) {
+  #others-summer {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #others-fall {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #others-winter {
+    display: none;
+  }
+}
+
+.story-block {
+  position: relative;
+  width: 33.333%;
+  display: inline-block;
+}
+
+@media screen and (max-width: 768px) {
+  .story-block {
+    width: 100%;
+    padding: 10px 15px;
+  }
+}
+
+.story-block:hover .story-txt {
+  opacity: 1;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.story-block a {
+  display: block;
+}
+
+.story-block img {
+  width: 100%;
+  height: auto;
+}
+
+.story-txt {
+  position: absolute;
+  bottom: 30px;
+  z-index: 1;
+  color: #fff;
+  opacity: .85;
+  text-align: center;
+  width: 100%;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+@media screen and (max-width: 768px) {
+  .story-txt {
+    opacity: 1;
+    width: calc(100% - 30px);
+  }
+}
+
+.story-txt h3 {
+  font-family: source-han-serif-tc, serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.5;
+  margin-top: 6px;
+}
+
+@media screen and (max-width: 768px) {
+  .story-txt h3 {
+    font-size: 20px;
+  }
+}
+
+.sp .sp-logo {
+  width: 120px;
+  height: auto;
+  margin: 18px 30px;
+}
+
+@media screen and (max-width: 768px) {
+  .sp .sp-logo {
+    width: 100px;
+    margin: 12px 20px;
+  }
+}
+
+.w-full {
+  width: 100%;
+}
+
+.max-w-800px {
+  max-width: 800px;
+}
+
+.m-auto {
+  margin: auto;
+}
+
+/* 必加 >> 跨瀏覽器強制寬度100% */
+.fb_iframe_widget_fluid_desktop iframe {
+  width: 100% !important;
 }
 /*# sourceMappingURL=main.css.map */
