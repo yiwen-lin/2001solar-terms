@@ -204,10 +204,10 @@ p+p {
     -moz-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
-	-moz-transition: left 1.2s ease-in;
-    -o-transition: left 1.2s ease-in;
-    -webkit-transition: left 1.2s ease-in;
-    transition: left 1.2s ease-in;	
+	-moz-transition: left .5s ease-in;
+    -o-transition: left .5s ease-in;
+    -webkit-transition: left .5s ease-in;
+    transition: left .5s ease-in;	
 
     @include mobile {
       width: 100%;
@@ -215,6 +215,10 @@ p+p {
       bottom: 0;
       background-color: #fff;
       box-shadow: 0 -4px 5px 0 rgba(140,140,140,0.2);
+      -webkit-transform: translateY(0%);
+      -moz-transform: translateY(0);
+      -ms-transform: translateY(0);
+      transform: translateY(0);
     }
 
 	&.active {

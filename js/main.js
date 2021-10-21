@@ -1,14 +1,18 @@
  // solar card - Click to show
- function myFunction() {
-    document.getElementById("others-spring").style.display = "block";
-    document.getElementById("others-summer").style.display = "block";
-    document.getElementById("others-fall").style.display = "block";
-    document.getElementById("others-winter").style.display = "block";
+ function myFunction(season, elm) {
+   elm.style.display = "none"; //click 後 btn 消失
+    document.getElementById("others-"+season).style.display = "block"; //click 後 內容出現
   }
 
 
   // header - Smooth scrolling using jQuery easing
   $('a.smooth-scroll[href*="#"]:not([href="#"])').click(function () {
+
+    //手機版 nav click 收合
+    if($(window).innerWidth() <= 769) {
+    $('.navbar-toggler').trigger('click');
+    }
+
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
       var target = $(this.hash);
       target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');

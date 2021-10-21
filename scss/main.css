@@ -208,8 +208,8 @@ p + p {
 }
 
 .seasons {
-  -webkit-transition: background-color 1s ease-in;
-  transition: background-color 1s ease-in;
+  -webkit-transition: background-color .3s ease-in;
+  transition: background-color .3s ease-in;
 }
 
 .seasonsItem {
@@ -226,8 +226,8 @@ p + p {
   z-index: 10;
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
-  -webkit-transition: left 1.2s ease-in;
-  transition: left 1.2s ease-in;
+  -webkit-transition: left .5s ease-in;
+  transition: left .5s ease-in;
 }
 
 @media only screen and (max-width: 768px) {
@@ -238,6 +238,8 @@ p + p {
     background-color: #fff;
     -webkit-box-shadow: 0 -4px 5px 0 rgba(140, 140, 140, 0.2);
             box-shadow: 0 -4px 5px 0 rgba(140, 140, 140, 0.2);
+    -webkit-transform: translateY(0%);
+    transform: translateY(0);
   }
 }
 
