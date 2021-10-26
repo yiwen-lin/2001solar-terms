@@ -89,6 +89,206 @@ p + p {
   border: 1px solid #999;
 }
 
+.main-kv {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  position: relative;
+  background-color: #F1F2E1;
+  overflow: hidden;
+}
+
+.main-kv .table-cell {
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+  height: calc(100vh - 70px);
+}
+
+@media only screen and (max-width: 768px) {
+  .main-kv .table-cell {
+    height: calc(100vh - 56px);
+  }
+}
+
+.main-kv .title-wrap {
+  z-index: 10;
+  position: relative;
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  text-align: start;
+  margin: auto;
+  background-image: url(../images/paper.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 400px;
+  height: 500px;
+  padding: 30px 28px;
+  -webkit-filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.25));
+          filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.25));
+}
+
+@media only screen and (max-width: 768px) {
+  .main-kv .title-wrap {
+    padding: 20px 20px;
+    width: 300px;
+    height: 374px;
+    background-size: cover;
+  }
+}
+
+.main-kv .title-wrap h3 {
+  margin: 0;
+  font-size: 20px;
+  letter-spacing: 4px;
+  font-weight: 400;
+  margin-right: 30px;
+  color: #555;
+}
+
+@media only screen and (max-width: 768px) {
+  .main-kv .title-wrap h3 {
+    margin-right: 0px;
+  }
+}
+
+.main-kv .title-wrap h1 {
+  margin: 0 30px;
+  font-size: 50px;
+  line-height: 1.3;
+  font-family: source-han-serif-tc, serif;
+  letter-spacing: 2px;
+}
+
+.main-kv .title-wrap h1 span {
+  -webkit-writing-mode: initial;
+      -ms-writing-mode: initial;
+          writing-mode: initial;
+  margin-top: -9px;
+}
+
+@media only screen and (max-width: 768px) {
+  .main-kv .title-wrap h1 {
+    font-size: 40px;
+  }
+}
+
+.main-kv .title-wrap .foreword {
+  position: absolute;
+  left: 28px;
+}
+
+.main-kv .title-wrap .foreword p {
+  margin: 0;
+  font-size: 17px;
+  color: #555;
+  letter-spacing: 2px;
+}
+
+@media only screen and (max-width: 768px) {
+  .main-kv .title-wrap .foreword p {
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 1.5;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .main-kv .title-wrap .foreword {
+    left: 20px;
+  }
+}
+
+.main-kv .bg-wrap {
+  position: absolute;
+  width: 120%;
+  top: -30%;
+  left: -10%;
+}
+
+@media only screen and (max-width: 768px) {
+  .main-kv .bg-wrap {
+    top: -20%;
+  }
+}
+
+.main-kv .bg-wrap .bg_animated {
+  background: url(../images/bar1.png) repeat-x;
+  width: 100%;
+  margin: 0;
+  padding-top: 362px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media only screen and (max-width: 768px) {
+  .main-kv .bg-wrap .bg_animated {
+    background: url(../images/bar1-mb.png) repeat-x;
+    padding-top: 195px;
+  }
+}
+
+.main-kv .bg-wrap .bg_animated.bar2 {
+  background: url(../images/bar2.png) repeat-x;
+}
+
+@media only screen and (max-width: 768px) {
+  .main-kv .bg-wrap .bg_animated.bar2 {
+    background: url(../images/bar2-mb.png) repeat-x;
+  }
+}
+
+.main-kv .bg-wrap .bg_animated.bar3 {
+  background: url(../images/bar3.png) repeat-x;
+}
+
+@media only screen and (max-width: 768px) {
+  .main-kv .bg-wrap .bg_animated.bar3 {
+    background: url(../images/bar3-mb.png) repeat-x;
+  }
+}
+
+.main-kv .bg-wrap .bg_animated.bar4 {
+  background: url(../images/bar1.png) repeat-x;
+}
+
+@media only screen and (max-width: 768px) {
+  .main-kv .bg-wrap .bg_animated.bar4 {
+    background: url(../images/bar4-mb.png) repeat-x;
+  }
+}
+
+.main-kv .bg-wrap .bg_animated.bar1,
+.main-kv .bg-wrap .bg_animated.bar3 {
+  -webkit-animation: slide_b1 120s linear infinite;
+  animation: slide_b1 120s linear infinite;
+}
+
+.main-kv .bg-wrap .bg_animated.bar2,
+.main-kv .bg-wrap .bg_animated.bar4 {
+  -webkit-animation: slide_b2 120s linear infinite;
+  animation: slide_b2 120s linear infinite;
+}
+
+@-webkit-keyframes slide_b1 {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -1230px 0;
+  }
+}
+
+@-webkit-keyframes slide_b2 {
+  from {
+    background-position: -1230px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+
 .title {
   text-align: center;
   margin-bottom: 50px;
@@ -221,7 +421,7 @@ p + p {
   margin: 0;
   padding: 0;
   position: fixed;
-  top: 30%;
+  top: 36%;
   left: -100%;
   z-index: 10;
   -webkit-transform: translateY(-50%);
