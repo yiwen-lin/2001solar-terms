@@ -32,7 +32,7 @@ a {
 
 h1 {
   font-size: 32px;
-  font-weight: 200;
+  font-weight: 500;
   line-height: 1.5;
   margin-bottom: 30px;
 }
@@ -298,10 +298,6 @@ p + p {
   .title {
     margin-bottom: 30px;
   }
-}
-
-.title h1 {
-  font-weight: 500;
 }
 
 .card-physique {
@@ -606,9 +602,6 @@ p + p {
     margin-top: 50px;
     margin-bottom: 40px;
   }
-  .solar-title p {
-    text-align: left;
-  }
   .solar-title span {
     display: inline;
   }
@@ -742,6 +735,11 @@ p + p {
           transform: rotateY(-180deg);
 }
 
+.front p {
+  position: absolute;
+  bottom: 20px;
+}
+
 .back {
   background: #fff;
   -webkit-transform: rotateY(-180deg);
@@ -817,8 +815,6 @@ p + p {
 }
 
 .back .book-link {
-  max-height: 120px;
-  overflow: hidden;
   margin-top: 14px;
 }
 

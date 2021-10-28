@@ -36,7 +36,7 @@ a {
 
 h1 {
     font-size: 32px;
-    font-weight: 200;
+    font-weight: 500;
     line-height: 1.5;
     margin-bottom: 30px;
     @include mobile {
@@ -246,9 +246,6 @@ p+p {
     margin-bottom: 50px;
     @include mobile {
       margin-bottom: 30px;
-    }
-    h1 {
-        font-weight: 500;
     }
 }
 //體質卡 start
@@ -517,7 +514,7 @@ p+p {
     margin-top: 50px;
     margin-bottom: 40px;
     p {
-      text-align: left;
+      // text-align: left;
     }
     span {
       display: inline;
@@ -628,6 +625,11 @@ p+p {
   .card:nth-child(even):hover & {
     transform: rotateY(-180deg);
   }
+  p {
+    position: absolute;
+    bottom: 20px;
+  }
+  
 }
 
 .back {
@@ -698,8 +700,7 @@ p+p {
     margin: 12px auto;
   }
   .book-link {
-    max-height: 120px;
-    overflow: hidden;
+    // overflow: hidden;
     margin-top: 14px;
     a {
       color: #000;
