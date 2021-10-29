@@ -855,3 +855,49 @@ p+p {
   width: 100% !important;
 }
 
+// ----------buy----------
+.buy-block {
+	padding: 100px 0;
+	.row {
+		align-items: center;
+	}
+	.cover {
+		img {
+			width: 100%;
+		}
+	}
+	.text {
+		text-align: left;
+		letter-spacing: 2px;
+    h3 {
+      font-size: 24px;
+      line-height: 1.5;
+      font-family: source-han-serif-tc, serif;
+      margin-bottom: 18px;
+    }
+		h5 {
+			font-size: 15px;
+			a {
+				color: $card-primary;
+				transition: .3s;
+				span {
+					font-size: 14px;
+					margin-left: 6px;
+				}
+				&:hover {
+					color: #000;
+				}
+			}
+
+		}
+	}
+	@include mobile {
+		padding: 80px 0;
+		.text {
+			text-align: center;
+			margin-top: 20px;
+		}
+
+	}
+}
+

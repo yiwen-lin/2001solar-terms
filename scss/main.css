@@ -986,4 +986,59 @@ p + p {
 .fb_iframe_widget_fluid_desktop iframe {
   width: 100% !important;
 }
+
+.buy-block {
+  padding: 100px 0;
+}
+
+.buy-block .row {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.buy-block .cover img {
+  width: 100%;
+}
+
+.buy-block .text {
+  text-align: left;
+  letter-spacing: 2px;
+}
+
+.buy-block .text h3 {
+  font-size: 24px;
+  line-height: 1.5;
+  font-family: source-han-serif-tc, serif;
+  margin-bottom: 18px;
+}
+
+.buy-block .text h5 {
+  font-size: 15px;
+}
+
+.buy-block .text h5 a {
+  color: #F75C2F;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.buy-block .text h5 a span {
+  font-size: 14px;
+  margin-left: 6px;
+}
+
+.buy-block .text h5 a:hover {
+  color: #000;
+}
+
+@media screen and (max-width: 768px) {
+  .buy-block {
+    padding: 80px 0;
+  }
+  .buy-block .text {
+    text-align: center;
+    margin-top: 20px;
+  }
+}
 /*# sourceMappingURL=main.css.map */
