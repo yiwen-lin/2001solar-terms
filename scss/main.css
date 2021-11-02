@@ -533,7 +533,7 @@ p + p {
 }
 
 #spring .solar-op {
-  background-image: url(../images/spring-op.jpg);
+  background: url(../images/spring-op.jpg) center center;
   background-size: cover;
   width: 100%;
   height: 300px;
@@ -547,7 +547,7 @@ p + p {
 }
 
 #summer .solar-op {
-  background-image: url(../images/summer-op.jpg);
+  background: url(../images/summer-op.jpg) center center;
   background-size: cover;
   width: 100%;
   height: 300px;
@@ -561,7 +561,7 @@ p + p {
 }
 
 #fall .solar-op {
-  background-image: url(../images/fall-op.jpg);
+  background: url(../images/fall-op.jpg) center center;
   background-size: cover;
   width: 100%;
   height: 300px;
@@ -575,7 +575,7 @@ p + p {
 }
 
 #winter .solar-op {
-  background-image: url(../images/winter-op.jpg);
+  background: url(../images/winter-op.jpg) center center;
   background-size: cover;
   width: 100%;
   height: 300px;
@@ -1023,9 +1023,10 @@ p + p {
   transition: .3s;
 }
 
-.buy-block .text h5 a span {
-  font-size: 14px;
-  margin-left: 6px;
+.buy-block .text h5 a img {
+  margin-left: 8px;
+  margin-bottom: 2px;
+  height: 15px;
 }
 
 .buy-block .text h5 a:hover {
